@@ -30,7 +30,7 @@ app.post('/login',async (req,resp)=>{
         if(user){
             Jwt.sign({user},jwtkey,{expiresIn:"2h"},(err,token)=>{
                 if(err){
-                    resp.send({result:"something went wrong,please try gain after sometime"})
+                    resp.send({result:"something went wrong,please try again after sometime"})
                 }
                 resp.send({user,auth:token})
             })
